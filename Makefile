@@ -1,5 +1,6 @@
 SRC =		src/initialize.cpp	\
 			src/tools.cpp	\
+			src/events.cpp	\
 			src/main.cpp
 
 NAME = 		jam

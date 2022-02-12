@@ -53,4 +53,5 @@ public:
 sf::Sprite get_bg_sprite(bool a, Main *M);
 void close_window(sf::RenderWindow *window, Main *M);
 sf::Sprite get_moving_bg_sprite(Main *M);
+void check_events(Main *M);
 #endif /* !MAIN_HPP_ */
