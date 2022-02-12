@@ -21,6 +21,15 @@ sf::Sprite get_bg_sprite(bool a, Main *M)
             return M->S.calm_bg_1s;
         }
     } else {
-        return M->S.calm_bg_1s;
+        return (get_moving_bg_sprite(M));
     }
+}
+
+sf::Sprite get_moving_bg_sprite(Main *M)
+{
+    if (M->current >= M->count){
+        M->current = 0;
+    }
+    M->current++;
+    return M->bg_s[M->current];
 }
