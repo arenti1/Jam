@@ -10,7 +10,8 @@ void main_loop(Main *M)
             check_events(M);
             close_window(&window, M); 
         }
-        window.draw(get_bg_sprite(M->bttn_clicked, M));
+        draw_background(&window, M->bttn_clicked, M);        
+        draw_money(&window, M);
         window.display();
     }
 }

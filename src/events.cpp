@@ -9,3 +9,11 @@ void check_events(Main *M)
         M->bttn_clicked = false;
     }
 }
+
+void close_window(sf::RenderWindow *window, Main *M)
+{
+    if (M->event.type == sf::Event::Closed){
+        window->close();
+        exit(0);
+    }
+}

@@ -1,5 +1,17 @@
 #include "../include/main.hpp"
 
+sf::Sprite animate_background(Main *M)
+{
+    M->current++;
+    if (M->current >= M->count){
+        M->current = 0;
+    }
+    if (M->office){
+        return M->fancy_bg_s[M->current];
+    } 
+    return M->bg_s[M->current];
+}
+
 sf::Sprite normal_office(bool a, Main *M)
 {
     if (!a){
@@ -13,7 +25,7 @@ sf::Sprite normal_office(bool a, Main *M)
             return M->S.calm_bg_1s;
         }
     } else {
-        return (get_moving_bg_sprite(M));
+        return (animate_background(M));
     }
 }
 
@@ -30,35 +42,31 @@ sf::Sprite fancy_office(bool a, Main *M)
             return M->S.fancy_calm_bg_1s;
         }
     } else {
-        return (get_moving_bg_sprite(M));
+        return (animate_background(M));
     }
 }
 
-sf::Sprite get_bg_sprite(bool a, Main *M)
+void draw_background(sf::RenderWindow *window, bool a, Main *M)
 {
     if (M->office){
-       return(fancy_office(a, M));
+        window->draw(fancy_office(a, M));
     } else {
-        return(normal_office(a, M));
+        window->draw(normal_office(a, M));
     }
 }
 
-sf::Sprite get_moving_bg_sprite(Main *M)
+void draw_money(sf::RenderWindow *window, Main *M)
 {
-    if (M->current >= M->count){
-        M->current = 0;
-    }
-    M->current++;
-    if (M->office){
-        return M->fancy_bg_s[M->current];
-    } 
-    return M->bg_s[M->current];
-}
-
-void close_window(sf::RenderWindow *window, Main *M)
-{
-    if (M->event.type == sf::Event::Closed){
-        window->close();
-        exit(0);
+    if (M->bttn_clicked == true){
+        M->money_time = M->money_clock.getElapsedTime();
+        if (M->money_time > sf::milliseconds(30)){
+            M->money_current++;
+            M->money_clock.restart();
+        }
+        if (M->money_current >= M->money_count){
+            M->money_current = 0;
+        }
+        M->money_s[M->money_current].setPosition(400, 10);
+        window->draw(M->money_s[M->money_current]);
     }
 }
