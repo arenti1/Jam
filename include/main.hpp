@@ -16,31 +16,15 @@ class Sprites
 public:
     sf::Texture calm_bg_1t;
     sf::Texture calm_bg_2t;
-    sf::Texture bg_01t;
-    sf::Texture bg_02t;
-    sf::Texture bg_03t;
-    sf::Texture bg_04t;
-    sf::Texture bg_05t;
-    sf::Texture bg_06t;
-    sf::Texture bg_07t;
-    sf::Texture bg_08t;
-    sf::Texture bg_09t;
-    sf::Texture bg_10t;
-    sf::Texture bg_11t;
     
     sf::Sprite calm_bg_1s;
     sf::Sprite calm_bg_2s;
-    sf::Sprite bg_01s;
-    sf::Sprite bg_02s;
-    sf::Sprite bg_03s;
-    sf::Sprite bg_04s;
-    sf::Sprite bg_05s;
-    sf::Sprite bg_06s;
-    sf::Sprite bg_07s;
-    sf::Sprite bg_08s;
-    sf::Sprite bg_09s;
-    sf::Sprite bg_10s;
-    sf::Sprite bg_11s;
+
+    sf::Texture fancy_calm_bg_1t;
+    sf::Texture fancy_calm_bg_2t;
+    
+    sf::Sprite fancy_calm_bg_1s;
+    sf::Sprite fancy_calm_bg_2s;
 };
 
 class Main 
@@ -51,12 +35,17 @@ public:
 
     bool bttn_clicked;
     sf::Clock clock;
-    sf::Time bg_t;
+    sf::Time bg_time;
     short i;
     short count;
     short current;
+    bool office = true;
 
-    sf::Sprite bg_s[12];
+    sf::Sprite bg_s[11];
+    sf::Texture bg_t[11];
+
+    sf::Sprite fancy_bg_s[11];
+    sf::Texture fancy_bg_t[11];
 
     Main();
 
