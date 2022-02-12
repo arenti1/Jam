@@ -33,6 +33,10 @@ public:
 class Main 
 {
 public:
+
+    int MONEY;
+    
+
     Sprites S;
     sf::Event event;
 
