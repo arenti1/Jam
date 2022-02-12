@@ -3,7 +3,7 @@
 void main_loop(Main *M)
 {
     M->bttn_clicked = false;
-    sf::RenderWindow window(sf::VideoMode(1200, 675), "MyGKrellm");
+    sf::RenderWindow window(sf::VideoMode(1200, 675), "Money tycoon");
 
     while (window.isOpen()){
         while (window.pollEvent(M->event)){

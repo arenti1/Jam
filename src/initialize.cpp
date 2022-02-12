@@ -23,7 +23,7 @@ void init_button(std::string str, sf::Texture *t, sf::Sprite *s)
         std::cout << "error loading from image\n";
     s->setTexture(*t);
     s->setScale(sf::Vector2f(0.4, 0.5));
-    s->setPosition(sf::Vector2f(800, 50));
+    s->setPosition(sf::Vector2f(950, 10));
 }
 
 Main::Main()
