@@ -88,5 +88,12 @@ Main::Main()
     init_sprite("./res/m/m24.png", &money_t[23], &money_s[23]);
 
     money_count = 24;
-    money_current = 0;    
+    money_current = 0;  
+    game_state = 1;  
 }
+
+Start::Start()
+{
+    init_sprite("../res/start1.png", &t1, &s1);
+    init_sprite("../res/start2.png", &t2, &s2);
+};

@@ -11,6 +11,17 @@
 #include <SFML/Window.hpp>
 #include <iostream>
 
+class Start
+{
+public:
+    sf::Texture t1;
+    sf::Texture t2;
+
+    sf::Sprite s1;
+    sf::Sprite s2;
+    Start();
+};
+
 class Button
 {
 public:
@@ -54,7 +65,9 @@ public:
 
     int MONEY;
     int raise;
-    
+
+
+    short game_state;
     Sprites S;
     sf::Event event;
 
@@ -85,4 +98,5 @@ void close_window(sf::RenderWindow *window, Main *M);
 void draw_background(sf::RenderWindow *window, bool a, Main *M);
 void check_events(Main *M, Button *B);
 void draw_money(sf::RenderWindow *window, Main *M);
+void start_screen(sf::RenderWindow *window, Main *M);
 #endif /* !MAIN_HPP_ */
