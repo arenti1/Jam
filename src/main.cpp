@@ -12,6 +12,7 @@ void main_loop(Main *M)
         }
         draw_background(&window, M->bttn_clicked, M);        
         draw_money(&window, M);
+        window.draw(M->S.button_s);
         window.display();
     }
 }

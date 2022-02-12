@@ -25,6 +25,9 @@ public:
     
     sf::Sprite fancy_calm_bg_1s;
     sf::Sprite fancy_calm_bg_2s;
+    
+    sf::Sprite button_s;
+    sf::Texture button_t;
 };
 
 class Main 

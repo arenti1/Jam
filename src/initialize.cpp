@@ -12,8 +12,24 @@ void init_sprite(std::string str, sf::Texture *t, sf::Sprite *s)
     s->setTexture(*t);
 }
 
+void init_button(std::string str, sf::Texture *t, sf::Sprite *s)
+{
+    sf::Image image;
+    sf::Sprite Sprite;
+
+    if (!image.loadFromFile(str.c_str()))
+        std::cout << "Cannot load image\n";
+    if (!t->loadFromImage(image))
+        std::cout << "error loading from image\n";
+    s->setTexture(*t);
+    s->setScale(sf::Vector2f(0.4, 0.5));
+    s->setPosition(sf::Vector2f(800, 50));
+}
+
 Main::Main()
 {
+    //BUTTON INIT
+    init_button("./res/button.png", &S.button_t, &S.button_s);
     //NORMAL OFFICE
     init_sprite("./res/calm_bg_1.gif", &S.calm_bg_1t, &S.calm_bg_1s);
     init_sprite("./res/calm_bg_2.gif", &S.calm_bg_2t, &S.calm_bg_2s);
