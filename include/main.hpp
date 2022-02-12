@@ -39,7 +39,7 @@ public:
     short i;
     short count;
     short current;
-    bool office = true;
+    bool office = false;
 
     sf::Sprite bg_s[11];
     sf::Texture bg_t[11];
