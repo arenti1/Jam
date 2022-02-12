@@ -29,7 +29,6 @@ Main::Main()
     init_sprite("./res/bg_10.gif", &bg_t[9], &bg_s[9]);
     init_sprite("./res/bg_11.gif", &bg_t[10], &bg_s[10]);
 
-
     //FANCY OFFICE
     init_sprite("./res/fancy_calm_bg_1.gif", &S.fancy_calm_bg_1t, &S.fancy_calm_bg_1s);
     init_sprite("./res/fancy_calm_bg_2.gif", &S.fancy_calm_bg_2t, &S.fancy_calm_bg_2s);
