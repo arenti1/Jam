@@ -7,7 +7,7 @@ void main_loop(Main *M)
 
     while (window.isOpen()){
         while (window.pollEvent(M->event)){
-            check_events(M);
+            check_events(M, &M->button_A);
             close_window(&window, M); 
         }
         draw_background(&window, M->bttn_clicked, M);        

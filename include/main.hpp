@@ -11,6 +11,24 @@
 #include <SFML/Window.hpp>
 #include <iostream>
 
+class Button
+{
+public:
+    int x;
+    int y;
+    int width;
+    int height;
+    std::string text;
+    Button(int xx, int yy, int w, int h)
+    {
+        x = xx;
+        y = yy;
+        width = w;
+        height = h;
+    }
+    virtual~Button() {};
+};
+
 class Sprites
 {
 public:
@@ -35,8 +53,8 @@ class Main
 public:
 
     int MONEY;
+    int raise;
     
-
     Sprites S;
     sf::Event event;
 
@@ -50,6 +68,7 @@ public:
     short money_count;
     short money_current;
     bool office = false; //normal office or fancy office background
+    Button button_A = Button(950, 10, 150, 170);
 
     sf::Texture bg_t[11];
     sf::Sprite bg_s[11];
@@ -64,6 +83,6 @@ public:
 };
 void close_window(sf::RenderWindow *window, Main *M);
 void draw_background(sf::RenderWindow *window, bool a, Main *M);
-void check_events(Main *M);
+void check_events(Main *M, Button *B);
 void draw_money(sf::RenderWindow *window, Main *M);
 #endif /* !MAIN_HPP_ */
