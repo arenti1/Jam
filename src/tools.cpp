@@ -87,7 +87,11 @@ void draw_moneyText(sf::RenderWindow *window, Main *M)
     text.setFont(font);
     text.setString(t.str());
     text.setCharacterSize(40);
-    text.setFillColor(sf::Color::White);
+    if (M->rage){
+        text.setFillColor(sf::Color::Red);
+    } else {
+        text.setFillColor(sf::Color::White);
+    }
     text.setPosition(50, 30);
     window->draw(text);
 }
@@ -126,8 +130,21 @@ void draw_motivation(sf::RenderWindow *window, Main *M)
             if (M->rest_y > 450){
                 M->rest_y -= 2;
             }
+            draw_choco(window, M);
             text.setPosition(M->rest_x, M->rest_y);
             window->draw(text);
         }
+    }
+}
+
+void draw_choco(sf::RenderWindow *window, Main *M)
+{
+    if (M->choco_x > 550){
+        M->choco_x -= 2;
+        M->S.choco_s.setPosition(M->choco_x, M->choco_y);
+        window->draw(M->S.choco_s);
+    } else {
+        M->rage = true;
+        M->coef = 4;
     }
 }

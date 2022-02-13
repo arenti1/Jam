@@ -70,6 +70,9 @@ public:
 
     sf::Texture bill_t;
     sf::Sprite bill_s;
+    
+    sf::Texture choco_t;
+    sf::Sprite choco_s;
 };
 
 class Main 
@@ -101,6 +104,10 @@ public:
     float rest_x;
     float rest_y;
     short temp = 1;
+    bool rage;
+    int coef;
+    float choco_x;
+    float choco_y;
     Main();
 };
 void close_window(sf::RenderWindow *window, Main *M);
@@ -111,4 +118,5 @@ void start_screen(sf::RenderWindow *window, Main *M);
 void draw_moneyText(sf::RenderWindow *window, Main *M);
 void draw_bill(sf::RenderWindow *window, Main *M);
 void draw_motivation(sf::RenderWindow *window, Main *M);
+void draw_choco(sf::RenderWindow *window, Main *M);
 #endif /* !MAIN_HPP_ */

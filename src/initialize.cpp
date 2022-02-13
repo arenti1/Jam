@@ -88,6 +88,7 @@ Main::Main()
     init_sprite("./res/m/m24.png", &S.money_t[23], &S.money_s[23]);
 
     init_sprite("./res/bill.jpg", &S.bill_t, &S.bill_s);
+    init_sprite("./res/images.png", &S.choco_t, &S.choco_s);
 
     money_count = 24;
     money_current = 0;  
@@ -95,6 +96,10 @@ Main::Main()
     rest_clock.restart();
     rest_x =  400;
     rest_y = 600;
+    rage = false;
+    coef = 1;
+    choco_x = 1300;
+    choco_y = 260;
 }
 
 Start::Start()
