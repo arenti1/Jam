@@ -73,6 +73,9 @@ public:
     
     sf::Texture choco_t;
     sf::Sprite choco_s;
+
+    sf::Texture end_t;
+    sf::Sprite end_s;
 };
 
 class Main 
@@ -119,4 +122,5 @@ void draw_moneyText(sf::RenderWindow *window, Main *M);
 void draw_bill(sf::RenderWindow *window, Main *M);
 void draw_motivation(sf::RenderWindow *window, Main *M);
 void draw_choco(sf::RenderWindow *window, Main *M);
+void end_screen(sf::RenderWindow *window, Main *M);
 #endif /* !MAIN_HPP_ */

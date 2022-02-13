@@ -16,6 +16,10 @@ void main_loop(sf::RenderWindow *window, Main *M)
         draw_motivation(window, M);
         window->draw(M->S.button_s);
         window->display();
+        if (M->MONEY > 60000){
+            M->game_state = 2;
+            return;
+        }
     }
 }
 
@@ -29,4 +33,5 @@ int main()
     if (M.game_state == 1){
         main_loop(&window, &M);
     }
+    end_screen(&window, &M);
 }

@@ -120,7 +120,7 @@ void draw_motivation(sf::RenderWindow *window, Main *M)
     text.setFillColor(sf::Color::Green);
     text.setPosition(M->rest_x, M->rest_y);
     
-    if (M->MONEY > 1000){
+    if (M->MONEY > 6000){
         if (M->temp){
             M->rest_clock.restart();
             M->temp--;

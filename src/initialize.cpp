@@ -89,6 +89,8 @@ Main::Main()
 
     init_sprite("./res/bill.jpg", &S.bill_t, &S.bill_s);
     init_sprite("./res/images.png", &S.choco_t, &S.choco_s);
+    init_sprite("./res/end.jpg", &S.end_t, &S.end_s);
+
 
     money_count = 24;
     money_current = 0;  
