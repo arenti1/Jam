@@ -7,9 +7,9 @@ sf::Sprite animate_background(Main *M)
         M->current = 0;
     }
     if (M->office){
-        return M->fancy_bg_s[M->current];
+        return M->S.fancy_bg_s[M->current];
     } 
-    return M->bg_s[M->current];
+    return M->S.bg_s[M->current];
 }
 
 sf::Sprite normal_office(bool a, Main *M)
@@ -66,7 +66,7 @@ void draw_money(sf::RenderWindow *window, Main *M)
         if (M->money_current >= M->money_count){
             M->money_current = 0;
         }
-        M->money_s[M->money_current].setPosition(400, 10);
-        window->draw(M->money_s[M->money_current]);
+        M->S.money_s[M->money_current].setPosition(400, 10);
+        window->draw(M->S.money_s[M->money_current]);
     }
 }

@@ -58,6 +58,15 @@ public:
     
     sf::Sprite button_s;
     sf::Texture button_t;
+
+     sf::Texture bg_t[11];
+    sf::Sprite bg_s[11];
+
+    sf::Texture fancy_bg_t[11];
+    sf::Sprite fancy_bg_s[11];
+
+    sf::Texture money_t[24];
+    sf::Sprite money_s[24];
 };
 
 class Main 
@@ -83,16 +92,6 @@ public:
     short money_current;
     bool office = false; //normal office or fancy office background
     Button button_A = Button(950, 10, 150, 170);
-
-    sf::Texture bg_t[11];
-    sf::Sprite bg_s[11];
-
-    sf::Texture fancy_bg_t[11];
-    sf::Sprite fancy_bg_s[11];
-
-    sf::Texture money_t[24];
-    sf::Sprite money_s[24];
-
     Main();
 };
 void close_window(sf::RenderWindow *window, Main *M);
