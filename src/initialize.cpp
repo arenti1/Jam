@@ -89,11 +89,11 @@ Main::Main()
 
     money_count = 24;
     money_current = 0;  
-    game_state = 1;  
+    game_state = 0;  
 }
 
 Start::Start()
 {
-    init_sprite("../res/start1.png", &t1, &s1);
-    init_sprite("../res/start2.png", &t2, &s2);
+    init_sprite("./res/start_screen1.jpg", &t1, &s1);
+    init_sprite("./res/start_screen2.jpg", &t2, &s2);
 };

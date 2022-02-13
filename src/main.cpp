@@ -21,9 +21,9 @@ int main()
     Main M;
     sf::RenderWindow window(sf::VideoMode(1200, 675), "Money tycoon");
     if (M.game_state == 0){
-        //start_screen(&window, &M);
+        start_screen(&window, &M);
     } 
-    else if (M.game_state == 1){
+    if (M.game_state == 1){
         main_loop(&window, &M);
     }
 }
