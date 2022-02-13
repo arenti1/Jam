@@ -1,4 +1,5 @@
 #include "../include/main.hpp"
+#include <sstream>
 
 sf::Sprite animate_background(Main *M)
 {
@@ -68,5 +69,65 @@ void draw_money(sf::RenderWindow *window, Main *M)
         }
         M->S.money_s[M->money_current].setPosition(400, 10);
         window->draw(M->S.money_s[M->money_current]);
+    }
+}
+
+void draw_moneyText(sf::RenderWindow *window, Main *M)
+{
+    sf::Font font;
+    if (!font.loadFromFile("./res/arial.ttf"))
+    {
+        std::cout << "Font couldn't be loaded\n";
+    }
+
+    std::stringstream t;
+
+    t << "$" << M->MONEY << std::endl;
+    sf::Text text;
+    text.setFont(font);
+    text.setString(t.str());
+    text.setCharacterSize(40);
+    text.setFillColor(sf::Color::White);
+    text.setPosition(50, 30);
+    window->draw(text);
+}
+
+void draw_bill(sf::RenderWindow *window, Main *M)
+{
+    window->draw(M->S.bill_s);
+}
+
+void draw_motivation(sf::RenderWindow *window, Main *M)
+{
+    sf::Font font;
+    if (!font.loadFromFile("./res/arial.ttf"))
+    {
+        std::cout << "Font couldn't be loaded\n";
+    }
+
+    std::stringstream t;
+
+    t << "You can do it!!\n"
+        "Here take this chocolatine to get\nmore energy!" << std::endl;
+    sf::Text text;
+    text.setFont(font);
+    text.setString(t.str());
+    text.setCharacterSize(40);
+    text.setFillColor(sf::Color::Green);
+    text.setPosition(M->rest_x, M->rest_y);
+    
+    if (M->MONEY > 1000){
+        if (M->temp){
+            M->rest_clock.restart();
+            M->temp--;
+        }
+        M->rest_time = M->rest_clock.getElapsedTime();
+        if (M->rest_time < sf::seconds(5)){
+            if (M->rest_y > 450){
+                M->rest_y -= 2;
+            }
+            text.setPosition(M->rest_x, M->rest_y);
+            window->draw(text);
+        }
     }
 }

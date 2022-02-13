@@ -22,8 +22,8 @@ void init_button(std::string str, sf::Texture *t, sf::Sprite *s)
     if (!t->loadFromImage(image))
         std::cout << "error loading from image\n";
     s->setTexture(*t);
-    s->setScale(sf::Vector2f(0.4, 0.5));
-    s->setPosition(sf::Vector2f(950, 10));
+    s->setScale(sf::Vector2f(0.3, 0.4));
+    s->setPosition(sf::Vector2f(1000, 0));
 }
 
 Main::Main()
@@ -87,9 +87,14 @@ Main::Main()
     init_sprite("./res/m/m23.png", &S.money_t[22], &S.money_s[22]);
     init_sprite("./res/m/m24.png", &S.money_t[23], &S.money_s[23]);
 
+    init_sprite("./res/bill.jpg", &S.bill_t, &S.bill_s);
+
     money_count = 24;
     money_current = 0;  
     game_state = 0;  
+    rest_clock.restart();
+    rest_x =  400;
+    rest_y = 600;
 }
 
 Start::Start()

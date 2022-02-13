@@ -11,6 +11,9 @@ void main_loop(sf::RenderWindow *window, Main *M)
         }
         draw_background(window, M->bttn_clicked, M);        
         draw_money(window, M);
+        draw_bill(window, M);
+        draw_moneyText(window, M);
+        draw_motivation(window, M);
         window->draw(M->S.button_s);
         window->display();
     }

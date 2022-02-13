@@ -67,6 +67,9 @@ public:
 
     sf::Texture money_t[24];
     sf::Sprite money_s[24];
+
+    sf::Texture bill_t;
+    sf::Sprite bill_s;
 };
 
 class Main 
@@ -92,6 +95,12 @@ public:
     short money_current;
     bool office = false; //normal office or fancy office background
     Button button_A = Button(950, 10, 150, 170);
+
+    sf::Clock rest_clock;
+    sf::Time rest_time;
+    float rest_x;
+    float rest_y;
+    short temp = 1;
     Main();
 };
 void close_window(sf::RenderWindow *window, Main *M);
@@ -99,4 +108,7 @@ void draw_background(sf::RenderWindow *window, bool a, Main *M);
 void check_events(Main *M, Button *B);
 void draw_money(sf::RenderWindow *window, Main *M);
 void start_screen(sf::RenderWindow *window, Main *M);
+void draw_moneyText(sf::RenderWindow *window, Main *M);
+void draw_bill(sf::RenderWindow *window, Main *M);
+void draw_motivation(sf::RenderWindow *window, Main *M);
 #endif /* !MAIN_HPP_ */
