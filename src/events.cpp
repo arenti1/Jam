@@ -9,7 +9,7 @@ void check_events(Main *M, Button *B)
            M->office = true;
            M->MONEY -= 10000;
            M->raise += 5;
-           M->coef = 10;
+           M->coef = 15;
     } else if (M->event.type == sf::Event::MouseButtonPressed &&
         M->event.mouseButton.button == sf::Mouse::Left){
         M->bttn_clicked = true;
